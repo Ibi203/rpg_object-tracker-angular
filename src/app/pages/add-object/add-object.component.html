@@ -1,0 +1,36 @@
+<h1> Object toevoegen</h1>
+
+<div class="add-form">
+  <div class="form-group">
+    <label for="name">Naam:</label>
+    <input id="name" [(ngModel)]="name" placeholder="object naam">
+  </div>
+
+  <div class="form-group">
+    <label for="type">Type:</label>
+    <select id="type" [(ngModel)]="type" name="type" class="rarity-select">
+      <option *ngFor="let type of objectTypes" [value]="type" [style.color]="getRarityColor(type)">
+        {{ type.charAt(0).toUpperCase() + type.slice(1) }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="value">goud:</label>
+    <input id="value" type="number" [(ngModel)]="value" placeholder="Voer waarde in">
+  </div>
+
+  <button (click)="addObject()">Voeg object toe</button>
+</div>
+
+<div class="objects-grid">
+  <div class="object-card" *ngFor="let object of objects">
+    <p>
+      <span class="label">Naam:</span><br>
+      <span class="value" [style.color]="getRarityColor(object.type)">{{object.name}}</span>
+    </p>
+   
+    <a [routerLink]="['/details', object.id]">Details bekijken</a>
+  </div>
+</div>
+

@@ -1,0 +1,31 @@
+<h1>Object Details</h1>
+
+<div class="details-container" *ngIf="object">
+  <div class="details-row">
+    <span class="label">Naam:</span>
+    <span class="value">{{ object.name }}</span>
+  </div>
+  <div class="details-row">
+    <span class="label">Type:</span>
+    <span class="value" [style.color]="getRarityColor(object.type)">
+      {{ object.type.charAt(0).toUpperCase() + object.type.slice(1) }}
+    </span>
+  </div>
+  <div class="details-row">
+    <span class="label">goud:</span>
+    <span class="value">{{ object.value || 'Onbekend' }}</span>
+  </div>
+  
+  <div class="navigation-links">
+    <a *ngIf="hasPreviousObject()" [routerLink]="['/details', getPreviousObjectId()]">← Vorig object</a>
+    <a routerLink="/">Terug naar overzicht</a>
+    <a *ngIf="hasNextObject()" [routerLink]="['/details', getNextObjectId()]">Volgend object →</a>
+  </div>
+</div>
+
+<div class="details-container" *ngIf="!object">
+  <p class="error-message">Object niet gevonden</p>
+  <div class="navigation-links">
+    <a routerLink="/">Terug naar overzicht</a>
+  </div>
+</div>

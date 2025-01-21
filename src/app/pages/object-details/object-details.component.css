@@ -1,0 +1,119 @@
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin: 2.5rem 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.details-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.details-container:hover {
+  transform: translateY(-2px);
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+}
+
+.details-row:hover {
+  background-color: #f8f9fa;
+}
+
+.details-row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 1.1rem;
+  flex: 0 0 30%;
+}
+
+.value {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  flex: 0 0 65%;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  padding: 1.5rem 0;
+  border-top: 2px solid #e9ecef;
+}
+
+.navigation-links a {
+  color: #2c3e50;
+  text-decoration: none;
+  padding: 12px 24px;
+  border: 2px solid #2c3e50;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.navigation-links a:hover {
+  background-color: #2c3e50;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
+}
+
+.error-message {
+  text-align: center;
+  color: #dc3545;
+  margin: 2.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .details-container {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  .details-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .label, .value {
+    flex: 0 0 100%;
+  }
+
+  .navigation-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navigation-links a {
+    text-align: center;
+  }
+}
